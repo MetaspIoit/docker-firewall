@@ -22,7 +22,14 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.19.0/docker
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-💡 Usage
+2. Build and Run<br>
+Build the Docker container:<br>
+```docker-compose build```
+
+3. Start the service:<br>
+```docker-compose up -d```
+
+💡 Usage<br>
 Once running, the firewall will automatically:
 
 · Monitor incoming connections<br>
