@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  port_scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./blocked_ip_list.txt
+        target: /app/blocked_ip_list.txt
+    container_name: port_scanner_firewall
